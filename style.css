@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+.fugaz-one-regular {
+  font-family: "Fugaz One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-beige: #ffdd9a;
+    --brown: #331901;
+    --orange: #e0710b;
+    --yellow: #fbbe47;
+    --top-down-gradient: linear-gradient(180deg,rgba(224, 113, 11, 1) 19%, rgba(251, 190, 71, 1) 48%, rgba(255, 255, 255, 0) 87%);
+    --down-top-gradient: linear-gradient(0deg,rgba(224, 113, 11, 1) 19%, rgba(251, 190, 71, 1) 48%, rgba(255, 255, 255, 0) 87%);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+        /* Navigation */
+    nav {
+            font-family: "Fugaz One", sans-serif;
+            height: 100px;
+            top: 0;
+            width: 100%;
+            background: var(--top-down-gradient);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px; /*solid rgba(255, 255, 255, 0.1);*/
+            border-radius: 0% 0% 5% 5%;
+    }
+
+        nav.scrolled {
+            background: var(--top-down-gradient);
+            box-shadow: var(--shadow-lg);
+            padding: 0.75rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+
+        .logo {
+            font-family: "Fugaz One", sans-serif;
+            color: var(--brown);
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+.footer{
+    font-family: "Fugaz One", sans-serif;
+    background: var(--down-top-gradient);
+    padding: 70px 0;
+    border-radius: 5% 5% 0% 0%;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: var(--brown);
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -10px;
+  background-color: var(--orange);
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: var(--primary-red);
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+.services {
+            margin: 3rem 3rem;
+            
+        }
+
+.outlined-text {
+    font-family: "Fugaz One", sans-serif; 
+    font-size: 5rem; 
+    color: var(--orange);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    text-align: center;
+    -webkit-text-stroke: 2px var(--brown);
+}
+
+        .services-list {
+          font-family: "Fugaz One", sans-serif;
+          font-size: 1.3rem; 
+          color: var(--light-text);
+          list-style: none; 
+          padding-left: 0;  
+
+        }
+
+        .services-list li {
+          position: relative;
+          padding-left: 1.5rem; 
+        }
+
+        .services-list li::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0.2rem;
+          width: 1rem;   
+          height: 1rem;  
+          background: url("index-img/star-bullet.svg") no-repeat center/contain;
+        }
+
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 2rem;
+            
+        }
+
+
+
+        .services-item {
+            
+            background: var(--primary-red);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            /* transform: translateY(20px);  quítalo */
+            /* opacity: 0; quítalo */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .services-item.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .services-item:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .services-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(139deg, rgba(0, 35, 125, 0.6) 0%, rgba(200, 4, 66, 0.6) 100%);
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .services-item:nth-child(1) .services-image {
+            background-image: url('index-img/preescolar-B.jpg');
+        }
+
+        .services-item:nth-child(2) .services-image {
+            background-image: url('index-img/primaria.jpg');
+        }
+
+        .services-item:nth-child(3) .services-image {
+            background-image: url('index-img/secundaria.jpg');
+        }
+
+        .services-item:nth-child(4) .services-image {
+            background-image: url('index-img/preparatoria.jpg');
+        }
+
+
+        .services-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            transition: all 0.3s ease;
+        }
+
+        .services-item:hover .services-image::before {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.4) 0%, rgba(139, 92, 246, 0.3) 100%);
+        }
+
+        .services-content {
+            padding: 2rem;
+        }
+
+        .services-content h4 {
+            font-family: "Passion One", sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            text-align: center;
+            font-weight: 500;
+        }

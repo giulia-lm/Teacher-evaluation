@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio Cristobal Colón</title>
+    <link href="index-style.css" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="index-img/border-logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo"><img src="index-img/border-logo.png" width="60" height="60">
+            Colegio Bilingüe Cristóbal Colón
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="torneos.html">Torneos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+             <li><a href="index.html">Inicio</a></li>
+            <li><a href="planes.html">Planes</a></li>
+            <li><a href="torneos.html">Torneos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+	<div id="slider">
+    <div class="slides">
+      <img src="index-img/ajedrez.jpg" alt="">
+      <img src="index-img/musica.png" alt="">
+      <img src="index-img/porras.jpg" alt="">
+    </div>
+
+			<input id="izquierda" type="image" src="index-img/red-izq.png" value="anterior" onclick="cambiarManual('IZQ')">
+			<input id="derecha" type="image" src="index-img/red-der.png" value="siguiente" onclick="cambiarManual('DER')">
+
+	</div>
+
+  
+    <section class="talleres">
+  <h2>¡Conoce nuestros distintos <span>talleres</span>!</h2>
+
+  <!-- Categoría: Deportivos -->
+  <div class="categoria">
+    <h3>Deportivos</h3>
+    <div class="grid-talleres">
+      <div class="card">
+        <img src="index-img/futbol.jpg" alt="Volley">
+        <p>Soccer</p>
+      </div>
+      <div class="card">
+        <img src="index-img/basket.jpg" alt="Fútbol">
+        <p>Basket</p>
+      </div>
+      <div class="card">
+        <img src="index-img/voley.jpg" alt="Básquetbol">
+        <p>Voley</p>
+      </div>
+      <div class="card">
+        <img src="index-img/flag.jpg" alt="Tae Kwon Do">
+        <p>Flag</p>
+      </div>
+      <div class="card">
+        <img src="index-img/porras.jpg" alt="Tae Kwon Do">
+        <p>Porras</p>
+        </div>
+      <div class="card">
+        <img src="index-img/ajedrez.jpg" alt="Tae Kwon Do">
+        <p>Ajedrez</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categoría: Culturales -->
+  <div class="categoria">
+    <h3>Culturales</h3>
+    <div class="grid-talleres">
+      <div class="card">
+        <img src="index-img/banda.webp" alt="Danza">
+        <p>Banda</p>
+      </div>
+      <div class="card">
+        <img src="index-img/hiphop.jpg" alt="Música">
+        <p>Hio Hop</p>
+      </div>
+      <div class="card">
+        <img src="index-img/teatro.jpg" alt="Teatro">
+        <p>Teatro</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Categoría: Tecnológicos -->
+  <div class="categoria">
+    <h1>Tecnológicos</h1>
+    <div class="grid-talleres">
+      <div class="card">
+        <img src="index-img/progra.webp" alt="Robótica">
+        <p>Programación</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
+    <!-- services Section -->
+
+  <section id="services" class="services">
+    <p>¡Conoce nuestros distintos planes educativos! </p>
+    <div class="services-grid">
+
+        <div class="services-item">
+          <a href="planes.html">
+            <div class="services-image"></div>
+            <div class="services-content">
+              <h4>Preescolar</h4> 
+            </div>
+          </a>     
+        </div>
+
+        <div class="services-item">
+          <a href="planes.html">
+            <div class="services-image"></div>
+            <div class="services-content">
+              <h4>Primaria</h4> 
+            </div>
+          </a>     
+        </div>
+
+        <div class="services-item">
+          <a href="planes.html">
+            <div class="services-image"></div>
+            <div class="services-content">
+              <h4>Secundaria</h4> 
+            </div>
+          </a>     
+        </div>
+
+        <div class="services-item">
+          <a href="planes.html">
+            <div class="services-image"></div>
+            <div class="services-content">
+              <h4>Preparatoria</h4> 
+            </div>
+          </a>     
+        </div>
+ 
+    </div>
+  </section>
+
+    <!-- Hero Section -->
+    <section class="promo-section">
+        <h1>¡Descubre por qué somos el mejor colegio bilingüe de Monterrey! </h1>
+    </section>
+
+    <!-- WhatsApp button -->
+    <a href="https://wa.me/5218115839066" target="_blank" class="whatsapp-button">
+      <img src="index-img/whatsapp.png" alt="Botón de WhatsApp" width="80" height="80">
+    </a>
+
+    <!-- Footer -->
+  <footer class="footer">
+     <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Colegio Bilingüe Cristóbal Colón</h4>
+          <ul>
+            <li><a href="about.html">Sobre nosotros</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contáctanos</h4>
+          <ul>
+            <li><a href="#">admisiones@ccmty.edu.mx</a></li>
+            <li><a href="#">81-1168-6565 (Llamadas)</a></li>
+            <li><a href="#">81-8370-2904 (Llamadas)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Dirección</h4>
+          <ul>
+            <li><a href="#">Camino del pastizal 201 Col. Barrio Estrella, Monterrey, Mexico</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/cccmty/?locale=es_LA"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/colegio.cristobalcolon.mty/?fbclid=IwY2xjawM8a4VleHRuA2FlbQIxMABicmlkETFiQXdjY0lVZkY2bmhBbDFhAR4HDNXPP2MYBImxhU2n7SItrSkisMgRafUG_2o0U6dvmrX68UIhgwmk_Nh0DQ_aem_tv28U4g3-3Nv-36WvzmEhQ"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+     </div>
+  </footer>
+
+
+  <script type="text/javascript" src="dynamic.js"></script>	
+</body>
+</html>

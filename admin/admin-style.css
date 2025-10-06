@@ -23,7 +23,8 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-        /* Navigation */
+
+/* Navigation */
 nav {
     font-family: "Fugaz One", sans-serif;
     position: fixed;
@@ -64,6 +65,46 @@ nav.scrolled {
     justify-content: center;
     align-items: center;
 }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-text);
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+            transform: translateY(-1px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: var(--blue-gradient);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+            border-radius: 1px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
 
 /* Footer */
@@ -160,90 +201,114 @@ ul{
     }
 }
 
+/* Sección de Login */
 
-/* User selection Section */
-.outlined-text {
-  font-family: "Fugaz One", sans-serif;
-  font-size: 5rem;
-  color: var(--orange);
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-  text-align: center;
-  -webkit-text-stroke: 2px var(--brown);
-}
-
-.users {
-  margin: 3rem 3rem;
-  text-align: center;
-}
-
-.users-grid {
+.login-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.users-item {
-  width: 350px;
-  overflow: hidden;
-  border-radius: 1.5rem;
+  min-height: 90vh;
+  gap: 4rem;
   background-color: var(--light-bg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.users-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+.login-image {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.users-image {
-  width: 100%;
-  height: 400px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform 0.4s ease;
+.login-image img.avatar {
+  width: 280px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.users-item:hover .users-image {
+.login-image img.avatar:hover {
   transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 }
 
-.users-item:nth-child(1) .users-image {
-  background-image: url('img/alumnx-icon.png');
+.login-box {
+  background-color: var(--yellow);
+  border-radius: 20px;
+  padding: 3rem 3.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 380px;
 }
 
-.users-item:nth-child(2) .users-image {
-  background-image: url('img/teacher-icon.png');
-}
-
-.users-item:nth-child(3) .users-image {
-  background-image: url('img/admin-icon.png');
-}
-
-.users-content {
-  background-color: var(--brown);
-  padding: 0.8rem 0;
-  transition: background-color 0.3s ease;
-}
-
-.users-item:hover .users-content {
-  background-color: var(--orange);
-}
-
-.users-item a {
-  text-decoration: none;
-}
-
-
-.users-content h4 {
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   font-family: "Fugaz One", sans-serif;
-  text-decoration: none;
+  color: var(--brown);
+}
+
+/* inputs */
+input[type=text], input[type=password] {
+  font-size: 1.4rem;
+  border-radius: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid var(--brown);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+  border-color: var(--orange);
+}
+
+/* botón */
+.login-button {
+    margin-top: 1.2rem; 
+  background-color: var(--orange);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-family: "Fugaz One", sans-serif;
+  color: var(--brown);
   font-size: 1.6rem;
-  color: white;
-  margin: 0;
-  letter-spacing: 1px;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.login-button:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+
+span.psw {
+  display: block;
+  text-align: center;  
+  margin-top: 1rem;
+  color: var(--brown);
+  font-size: 1rem;
+}
+
+span.psw a {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+span.psw a:hover {
+  text-decoration: underline;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .login-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .login-image img.avatar {
+    width: 180px;
+  }
 }

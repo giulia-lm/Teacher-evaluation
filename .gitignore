@@ -1,0 +1,16 @@
+# conexion a bd
+backend/db_connect.php
+*.env
+
+# archivos del sistema
+.DS_Store
+Thumbs.db
+
+#
+tmp/
+logs/
+
+# xampp y locals
+/opt/
+/lampp/
+/var/

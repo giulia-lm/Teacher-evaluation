@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/* Seccion de Formulario a contestar por alumnxs*/
+
+form{
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.survey-section{
+padding-top: 200px; 
+  display:contents;
+  background-color: var(--light-bg);
+}
+
+.survey-section p{
+    color: var(--brown);
+    font-family: "Fugaz One", sans-serif;
+    font-size: 2rem;
+}
+
+.survey-form {
+
+  background-color: var(--light-bg);
+}
+
+.question{
+  text-align: center;
+  font-family: "Fugaz One", sans-serif;
+  color: var(--orange);
+  font-size: 2rem;
+}
+
+.options {
+    gap: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options input {
+  height: auto;
+}
+
+textarea {
+  width: 70%; 
+  height: 150px; 
+    padding: 10px; 
+  border: 1px solid var(--brown); 
+  border-radius: 5px; 
+  font-family: Arial, sans-serif; /* Sets the font */
+  font-size: 16px; 
+  resize: vertical; 
+}
+
+textarea:focus {
+  outline: none; 
+  border-color: var(--orange); 
+}
+
+/* botones */
+button {
+  margin-top: 1.2rem; 
+  background-color: var(--orange);
+  border: 10px solid var(--orange);
+  border-radius: 15px;
+  cursor: pointer;
+  width: auto;
+  font-family: "Fugaz One", sans-serif;
+  color: var(--brown);
+  font-size: 1.6rem;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}

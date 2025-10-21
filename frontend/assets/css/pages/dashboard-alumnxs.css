@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* Seccion de Evaluaciones disponibles*/
+
+.available-forms-section{
+    padding-top: 200px; 
+  display:contents;
+  justify-content: center;
+  align-items: center;
+ 
+  background-color: var(--light-bg);
+}
+
+.available-forms-textBox{
+  
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  background-color: var(--light-bg);
+}
+
+.welcome-textBox h2{
+  text-align: center;
+  font-family: "Fugaz One", sans-serif;
+  color: var(--orange);
+  font-size: 3rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--brown);
+}

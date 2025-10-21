@@ -10,7 +10,7 @@ menu, logo, footer
 
 nav {
     font-family: "Fugaz One", sans-serif;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     background: var(--top-down-gradient);
@@ -240,4 +240,46 @@ ul{
     .footer-col{
         width: 100%;
     }
+}
+
+/* Seccion de Bienvenida con imagen */
+
+.welcome-section{
+    padding-top: 200px; 
+  display:contents;
+  justify-content: center;
+  align-items: center;
+ 
+  background-color: var(--light-bg);
+}
+
+.welcome-textBox {
+  
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--light-bg);
+}
+
+.welcome-textBox h2{
+  text-align: center;
+  font-family: "Fugaz One", sans-serif;
+  color: var(--orange);
+  font-size: 6rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--brown);
+}
+
+.welcome-image {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-image img.avatar {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }

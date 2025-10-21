@@ -3,13 +3,15 @@
 
 /*
 
-estilo de los forms de login,  
+estilo de los forms de login, 
+de la bienvenida e imagen 
 
 */
 
 /* LOGIN form */
 
 .login-section {
+  padding-top: 72px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,4 +119,46 @@ span.psw a:hover {
   .login-image img.avatar {
     width: 180px;
   }
+}
+
+/* Seccion de Bienvenida con imagen */
+
+.welcome-section{
+    padding-top: 200px; 
+  display:contents;
+  justify-content: center;
+  align-items: center;
+ 
+  background-color: var(--light-bg);
+}
+
+.welcome-textBox {
+  
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--light-bg);
+}
+
+.welcome-textBox h2{
+  text-align: center;
+  font-family: "Fugaz One", sans-serif;
+  color: var(--orange);
+  font-size: 6rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--brown);
+}
+
+.welcome-image {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-image img.avatar {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }

@@ -1,6 +1,8 @@
 <?php
 // submit_form.php
 session_start();
+file_put_contents('debug_post.txt', print_r($_POST, true));
+
 require_once __DIR__ . '/db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -98,6 +100,7 @@ if ($answers_json) {
         }
     }
 }
+
 
 // validación básica: al menos una respuesta
 if (empty($answers)) {

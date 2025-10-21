@@ -13,6 +13,8 @@
     <link href="../assets/css/layout.css" rel="stylesheet">
 
     <link href="../assets/css/pages/dashboard-alumnxs.css" rel="stylesheet">
+    <link href="../assets/css/pages/forms.css" rel="stylesheet">
+    
 
     <link rel="icon" type="image/jpg" href="../assets/css/img/alumnx-icon.png">
 
@@ -60,12 +62,48 @@
 
 <!-- Sección de Encuestas Disponibles a contestar -->
 <section class="available-forms-section">
-
   <div class="available-forms-textBox">
-    <h2>Evaluciones disponibles</h2>
+    <h2>Evaluaciones disponibles</h2>
+    <p>Selecciona una encuesta para contestar:</p>
   </div>
 
+  <div class="available-forms-container" id="available-forms">
+
+    <!-- JS insertará aquí las encuestas disponibles -->
+    <!-- Ejemplo (se genera dinámicamente):
+    <div class="form-card" data-id="1" data-title="Encuesta sobre la materia Matemáticas I">
+      <h3>Encuesta sobre la materia Matemáticas I</h3>
+      <p>Materia: Matemáticas I</p>
+      <button class="btn-open-form">Responder</button>
+    </div>
+    -->
+  </div>
 </section>
+
+<!-- SECCIÓN DEL FORMULARIO DE ENCUESTA -->
+<section id="survey-section" class="survey-section" style="display:none;">
+  <h2 id="survey-title">Encuesta</h2>
+  <form id="survey-form" method="post" action="../../backend/submit_form.php">
+    <input type="hidden" id="form_id" name="form_id" value="">
+    <input type="hidden" id="survey_type" name="survey_type" value="">
+    
+    <div id="questions-container">
+      <!-- Las preguntas se generarán aquí desde JS -->
+    </div>
+
+    <button type="submit" class="btn-submit">Enviar encuesta</button>
+  </form>
+</section>
+
+<div id="flash-message" class="flash-message">
+  <?php
+  session_start();
+  if(!empty($_SESSION['success'])) {
+      echo $_SESSION['success'];
+      unset($_SESSION['success']);
+  }
+  ?>
+</div>
 
 <!-- Footer -->
   <footer class="footer">
@@ -98,6 +136,7 @@
 
 
 
-  <script type="text/javascript" src="dynamic.js"></script>	
+  <script type="text/javascript" src="../../backend/interactions.js"></script>	
+
 </body>
 </html>

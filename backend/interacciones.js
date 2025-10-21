@@ -24,42 +24,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'form-card';
         card.dataset.id = f.id;
-        card.dataset.title = f.title;
         card.dataset.type = f.id_docente ? 'docente' : 'materia';
-
         card.innerHTML = `
           <h3>${f.title}</h3>
-          <p>Materia: ${f.id_materia}</p>
+          <p>${f.id_docente ? 'Docente: ' + f.docente : 'Materia: ' + f.materia}</p>
           <button class="btn-open-form">Responder</button>
         `;
-
         availableFormsContainer.appendChild(card);
 
-
+        // Abrir encuesta al hacer click
         card.querySelector('.btn-open-form').addEventListener('click', () => {
           formIdInput.value = f.id;
           surveyTypeInput.value = f.id_docente ? 'docente' : 'materia';
           surveyTitle.textContent = f.title;
-
-  
           questionsContainer.innerHTML = '';
 
-                data.questions.forEach(q => {
-                    let html = `<div class="question-block">
-                                    <label class="question">${q.text}</label><br>`;
-                    if(q.type === 'multiple') {
-                        q.choices.forEach(c => {
-                            html += `<input type="radio" name="choice_${q.id}" value="${c.id}" required> ${c.text}<br>`;
-                        });
-                    } else if(q.type === 'texto') {
-                        html += `<textarea name="q${q.id}" rows="3" placeholder="Escribe tu respuesta..."></textarea>`;
-                    }
-                    html += `</div><br>`;
-                    questionsContainer.innerHTML += html;
-                });
+          // Pedir las preguntas del form por separado
+          fetch(`../../backend/get_form_questions.php?form_id=${f.id}`)
+            .then(res => res.json())
+            .then(qdata => {
+              qdata.questions.forEach(q => {
+                let html = `<div class="question-block">
+                              <label class="question">${q.text}</label><br>`;
+                if(q.type === 'multiple') {
+                  q.choices.forEach(c => {
+                    html += `<input type="radio" name="choice_${q.id}" value="${c.id}" required> ${c.text}<br>`;
+                  });
+                } else if(q.type === 'texto') {
+                  html += `<textarea name="q${q.id}" rows="3" placeholder="Escribe tu respuesta..."></textarea>`;
+                }
+                html += `</div><br>`;
+                questionsContainer.innerHTML += html;
+              });
 
-          surveySection.style.display = 'block';
-          surveySection.scrollIntoView({ behavior: 'smooth' });
+              surveySection.style.display = 'block';
+              surveySection.scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(err => console.error('Error al cargar preguntas:', err));
         });
       });
     })
